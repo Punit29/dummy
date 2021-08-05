@@ -1,0 +1,161 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.listContainer {
+  width: 20vw;
+  max-width: 30vw;
+  align-items: flex-start;
+  background-color: rgb(204, 204, 230);
+  padding: 1vw;
+  margin: 1vw;
+  margin-top: 0;
+  border-radius: 0.4vw;
+}
+.listName {
+  width: 15vw;
+}
+.cards {
+  margin: 1vw;
+  overflow: scroll;
+}
+.allLists {
+  margin: 1vw;
+  margin-top: 2vw;
+  display: flex;
+  align-items: flex-start;
+  overflow: scroll;
+}
+.allLists::-webkit-scrollbar,
+.cards::-webkit-scrollbar {
+  display: none;
+}
+/* .cardName {
+  font-size: 1.5vw;
+} */
+.cardDiv {
+  margin-bottom: 1vw;
+  padding: 1vw;
+  background-color: rgb(247, 247, 248);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5vw;
+}
+.input {
+  width: 18vw;
+}
+.cards {
+  max-height: 30vw;
+}
+.listDiv {
+  display: flex;
+}
+.newListButton {
+  padding: 1vw;
+  min-width: 15vw;
+  color: white;
+  background-color: rgb(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 0.5vw;
+}
+.styles_modal__gNwvD {
+  width: 60vw !important;
+}
+.buttonsOfCheckList {
+  display: flex;
+  /* justify-content: space-around; */
+}
+.checkItem {
+  display: flex;
+  background-color: rgb(175, 175, 212);
+  margin: 1vw;
+  margin-left: 3vw;
+  padding: 0 2vw 0 2vw;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.5vw;
+}
+.deleteButtonForItem {
+  margin-left: 1vw;
+}
+.listHead {
+  display: flex;
+}
+.homeContent {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+.homeImg {
+  margin-top: 1vw;
+  background-color: white;
+}
+.boardButton {
+  margin: 2vw;
+}
+.deleteButtonForList,
+.addButton {
+  background: none;
+  border: none;
+}
+.boardB {
+  background-color: transparent;
+  /* background-repeat: no-repeat; */
+  border: none;
+  margin: 2vw;
+  border-bottom: 0.1vw solid khaki;
+  cursor: pointer;
+  overflow: hidden;
+  min-width: 20vw;
+}
+.hideDiv {
+  background-color: rgb(0, 0, 0, 0.2);
+  color: aliceblue;
+  border-radius: 0.5vw;
+  padding-bottom: 0.5vw;
+}
+.inputHideDiv,
+.hideButtons {
+  margin: 0.5vw;
+}
+/* .hideButtons {
+  /* display: flex; */
+/* justify-content: space-around; */
+.hideButton,
+.hideButton1,
+.deleteButtonForItem {
+  border: none;
+  border-radius: 0.5vw;
+  background-color: rgb(0, 0, 0, 0.2);
+  margin-right: 1vw;
+}
+.input {
+  border: none;
+  background: none;
+  border-bottom: 0.1vw solid rgb(155, 130, 130);
+}
