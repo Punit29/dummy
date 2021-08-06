@@ -9,10 +9,10 @@ class Form extends React.Component {
           <input
             onChange={this.props.inputState}
             className='input'
+            required
             type='text'
             value={this.props.input}
             placeholder='Enter title'
-            required
           />
         </div>
         <div className='hideButtons'>
