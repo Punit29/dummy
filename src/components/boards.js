@@ -12,14 +12,13 @@ class Boards extends Component {
       {
         method: 'GET'
       }
-    )
-      .then(data => data.json())
+    ).then(data => data.json())
       .then(data => {
-        // console.log(data);
         this.setState({
           boards: data
         });
-      });
+      })
+      .catch(e => console.log(e));
   }
   render() {
     return (

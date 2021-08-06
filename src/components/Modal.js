@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from 'react-responsive-modal'; //install lib for modal pop up
+import Modal from 'react-responsive-modal';
 import CheckList from './CheckList';
 import Form from './Form';
 
@@ -28,7 +28,8 @@ class Appp extends React.Component {
           this.setState({
             checkLists: data
           })
-        );
+        )
+        .catch(e => console.log(e));
     }
   }
   openHideDiv = () => {
@@ -59,7 +60,8 @@ class Appp extends React.Component {
           checkLists: this.state.checkLists.concat([data]),
           inputValue: ''
         });
-      });
+      })
+      .catch(e => console.log(e));
   };
   deleteCheckList = id => {
     fetch(
@@ -73,12 +75,11 @@ class Appp extends React.Component {
           checkList => checkList.id !== id
         )
       });
-    });
+    })
+    .catch(e => console.log(e));
   };
 
   render() {
-    //console.log(this.props, 'hello');
-    // const { open } = this.state;
     let closeaddButton = this.state.hideDiv ? 'none' : 'block';
     let openHideDiv = this.state.hideDiv ? 'block' : 'none';
     let checkLists = this.state.checkLists.map(checkList => (

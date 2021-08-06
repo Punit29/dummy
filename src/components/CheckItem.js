@@ -11,6 +11,7 @@ class CheckItem extends Component {
           }
           type='checkBox'
           className='checkBox'
+          required
           checked={this.props.checkItem.state === 'complete' ? true : false}
           readOnly
         />

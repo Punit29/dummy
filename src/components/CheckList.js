@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Form from './Form';
-import CheckItem from './CheckItem'; //component of checkItem
+import CheckItem from './CheckItem';
 
 
 
@@ -20,7 +20,8 @@ class CheckList extends Component {
         this.setState({
           checkItems: data
         })
-      );
+      )
+      .catch(e => console.log(e));
   }
   openHideDiv = () => {
     this.setState({
@@ -50,7 +51,8 @@ class CheckList extends Component {
           checkItems: this.state.checkItems.concat([data]),
           inputValue: ''
         })
-      );
+      )
+      .catch(e => console.log(e));
   };
   deleteCheckItem = id => {
     fetch(
@@ -64,7 +66,8 @@ class CheckList extends Component {
           CheckItem => CheckItem.id !== id
         )
       });
-    });
+    })
+    .catch(e => console.log(e));
   };
   updateCheckItem = (event, checkItem) => {
     let checkItemStatus = event.target.checked ? 'complete' : 'incomplete';
@@ -81,10 +84,10 @@ class CheckList extends Component {
         this.setState({
           checkItems: allItem
         });
-      });
+      })
+      .catch(e => console.log(e));
   };
   render() {
-    //console.log(this.props.checkList);
     let closeaddButton = this.state.hideDiv ? 'none' : 'block';
     let openHideDiv = this.state.hideDiv ? 'block' : 'none';
     let checkItems = this.state.checkItems.map(checkItem => (

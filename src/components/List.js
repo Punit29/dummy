@@ -12,17 +12,14 @@ class List extends Component {
   componentDidMount() {
     fetch(
       `https://api.trello.com/1/lists/${this.props.lists.id}/cards?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`,
-      {
-        // method: 'GET'
-      }
     )
       .then(data => data.json())
       .then(data => {
-        console.log(data);
         this.setState({
           cards: data
         });
-      });
+      })
+      .catch(e => console.log(e));
   }
   openHideDiv = () => {
     this.setState({
@@ -40,7 +37,6 @@ class List extends Component {
     });
   };
   addNewCard = async () => {
-    //console.log(this.props.lists.id);
 
     await fetch(
       `https://api.trello.com/1/cards?idList=${this.props.lists.id}&name=${this.state.inputValue}&keepFromSource=all&key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`,
@@ -54,7 +50,8 @@ class List extends Component {
           cards: this.state.cards.concat([data]),
           inputValue: ''
         });
-      });
+      })
+      .catch(e => console.log(e));
   };
 
   deleteCard = (event, id) => {
@@ -63,10 +60,10 @@ class List extends Component {
       method: 'DELETE'
     }).then(() => {
       this.setState({ cards: this.state.cards.filter(card => card.id !== id) });
-    });
+    })
+    .catch(e => console.log(e));
   };
   render() {
-    //console.log(this.state.inputValue);
     let closeaddButton = this.state.hideDiv ? 'none' : 'block';
     let openHideDiv = this.state.hideDiv ? 'block' : 'none';
     let allCards = this.state.cards.map(card => {

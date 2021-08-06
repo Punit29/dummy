@@ -13,9 +13,7 @@ class Lists extends Component {
     card: {}
   };
   componentDidMount() {
-    //console.log('helee');
     fetch(
-      //get all lists
       `https://api.trello.com/1/boards/${this.props.match.params.id}/lists?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`,
       {
         method: 'GET'
@@ -23,11 +21,11 @@ class Lists extends Component {
     )
       .then(data => data.json())
       .then(data => {
-        // console.log(data);
         this.setState({
           lists: data
         });
-      });
+      })
+      .catch(e => console.log(e));
   }
   openHideDiv = () => {
     this.setState({
@@ -70,13 +68,11 @@ class Lists extends Component {
       this.setState({ lists: this.state.lists.filter(list => list.id !== id) });
     });
   };
-  //use for open check list modal
   openModal = cardObj => {
     this.setState({
       open: true,
       card: cardObj
     });
-    //this.getAllCheckList(cardObj);
   };
 
   onCloseModal = () => {
@@ -85,7 +81,6 @@ class Lists extends Component {
     });
   };
   render() {
-    //console.log(this.state.checkLists);
     let closeaddButton = this.state.hideDiv ? 'none' : 'block';
     let openHideDiv = this.state.hideDiv ? 'block' : 'none';
     let allLists = this.state.lists.map(list => {
@@ -99,12 +94,11 @@ class Lists extends Component {
       );
     });
     return (
-      //   <div>
+      
       <div
         style={{ display: 'flex', justifyContent: 'space-between' }}
         className='allLists'>
         {allLists}
-        {/* </div> */}
         <button
           onClick={this.openHideDiv}
           className='newListButton'

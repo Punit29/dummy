@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import boards from './boards';
-// import { MdHome } from "react-icons/md";
 
 function Header() {
   return (

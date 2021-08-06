@@ -3,7 +3,6 @@ import React from 'react';
 class Form extends React.Component {
   state = {};
   render() {
-    //hide from
     return (
       <div className='hideDiv' style={{ display: this.props.style.display }}>
         <div className='hideInputDiv'>
@@ -13,6 +12,7 @@ class Form extends React.Component {
             type='text'
             value={this.props.input}
             placeholder='Enter title'
+            required
           />
         </div>
         <div className='hideButtons'>
