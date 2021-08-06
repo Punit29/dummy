@@ -69,7 +69,7 @@ class CheckList extends Component {
     });
   };
   updateCheckItem = (event, checkItem) => {
-    var checkItemStatus = event.target.checked ? 'complete' : 'incomplete';
+    let checkItemStatus = event.target.checked ? 'complete' : 'incomplete';
     fetch(
       `https://api.trello.com/1/cards/${this.props.checkList.idCard}/checkItem/${checkItem.id}?state=${checkItemStatus}&key=${key}&token=${token}`,
       {
@@ -78,7 +78,7 @@ class CheckList extends Component {
     )
       .then(data => data.json())
       .then(data => {
-        var allItem = this.state.checkItems;
+        let allItem = this.state.checkItems;
         allItem[allItem.indexOf(checkItem)].state = data.state;
         this.setState({
           checkItems: allItem
@@ -87,8 +87,8 @@ class CheckList extends Component {
   };
   render() {
     //console.log(this.props.checkList);
-    var closeaddButton = this.state.hideDiv ? 'none' : 'block';
-    var openHideDiv = this.state.hideDiv ? 'block' : 'none';
+    let closeaddButton = this.state.hideDiv ? 'none' : 'block';
+    let openHideDiv = this.state.hideDiv ? 'block' : 'none';
     let checkItems = this.state.checkItems.map(checkItem => (
       <CheckItem
         key={checkItem.id}

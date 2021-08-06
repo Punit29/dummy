@@ -88,9 +88,9 @@ class Lists extends Component {
   };
   render() {
     //console.log(this.state.checkLists);
-    var closeaddButton = this.state.hideDiv ? 'none' : 'block';
-    var openHideDiv = this.state.hideDiv ? 'block' : 'none';
-    var allLists = this.state.lists.map(list => {
+    let closeaddButton = this.state.hideDiv ? 'none' : 'block';
+    let openHideDiv = this.state.hideDiv ? 'block' : 'none';
+    let allLists = this.state.lists.map(list => {
       return (
         <List
           key={list.id}

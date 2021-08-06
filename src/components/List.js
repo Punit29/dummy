@@ -69,9 +69,9 @@ class List extends Component {
   };
   render() {
     //console.log(this.state.inputValue);
-    var closeaddButton = this.state.hideDiv ? 'none' : 'block';
-    var openHideDiv = this.state.hideDiv ? 'block' : 'none';
-    var allCards = this.state.cards.map(card => {
+    let closeaddButton = this.state.hideDiv ? 'none' : 'block';
+    let openHideDiv = this.state.hideDiv ? 'block' : 'none';
+    let allCards = this.state.cards.map(card => {
       return (
         <Card
           key={card.id}

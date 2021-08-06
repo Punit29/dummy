@@ -5,9 +5,11 @@ const Board = props => {
   return (
     <div>
       <Link to={`/board/${props.boards.id}`}>
-        <button className='boardB btn btn-primary active'>
-          {props.boards.name}
-        </button>
+        <div className='columncss'>
+          <div className='cardcss'>
+            <h3>{props.boards.name}</h3>
+          </div>
+        </div>
       </Link>
     </div>
   );

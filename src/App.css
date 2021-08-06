@@ -139,13 +139,16 @@
   border-radius: 0.5vw;
   padding-bottom: 0.5vw;
 }
+
+.input::placeholder{
+  color: black;
+}
+
 .inputHideDiv,
 .hideButtons {
   margin: 0.5vw;
 }
-/* .hideButtons {
-  /* display: flex; */
-/* justify-content: space-around; */
+
 .hideButton,
 .hideButton1,
 .deleteButtonForItem {
@@ -157,5 +160,52 @@
 .input {
   border: none;
   background: none;
-  border-bottom: 0.1vw solid rgb(155, 130, 130);
+  color: white;
+  border-bottom: 0.1vw solid black;
+}
+
+.board{
+  display: flex;
+  justify-content: center;
+}
+
+
+.columncss {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+  margin-bottom: 30px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.rowcss {
+  margin: 50px 20px 50px 50px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.cardcss {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  background-color: blueviolet;
 }

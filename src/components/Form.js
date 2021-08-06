@@ -12,7 +12,7 @@ class Form extends React.Component {
             className='input'
             type='text'
             value={this.props.input}
-            placeholder='enter title'
+            placeholder='Enter title'
           />
         </div>
         <div className='hideButtons'>

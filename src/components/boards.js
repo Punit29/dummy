@@ -24,11 +24,14 @@ class Boards extends Component {
       });
   }
   render() {
-    var allBoards = this.state.boards.map(board => {
-      return <Board key={board.id} boards={board} />;
-    });
-    return allBoards;
-  }
+    return (
+      <div className="rowcss">
+      {this.state.boards.map(board => (
+        <Board key={board.id} boards={board} />
+      ))}
+    </div>
+    )
+}
 }
 
 export default Boards;

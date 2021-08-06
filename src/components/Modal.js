@@ -81,8 +81,8 @@ class Appp extends React.Component {
   render() {
     //console.log(this.props, 'hello');
     // const { open } = this.state;
-    var closeaddButton = this.state.hideDiv ? 'none' : 'block';
-    var openHideDiv = this.state.hideDiv ? 'block' : 'none';
+    let closeaddButton = this.state.hideDiv ? 'none' : 'block';
+    let openHideDiv = this.state.hideDiv ? 'block' : 'none';
     let checkLists = this.state.checkLists.map(checkList => (
       <CheckList
         key={checkList.id}

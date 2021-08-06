@@ -3,14 +3,11 @@ body {
   padding: 0;
   font-family: sans-serif;
   height: 100vh;
-  background-image: url('https://external-preview.redd.it/7wkv7hmcXm70ASIX2BH8fEKav_bfzkKKyX-U-neS8sE.jpg?auto=webp&s=38b6e61e057ee58774c36c51a439e210f4105eda');
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: url('./7wkv7hmcXm70ASIX2BH8fEKav_bfzkKKyX-U-neS8sE.jpg');
 }
 .header {
   display: flex;
   padding-left: 3vw;
-  /* justify-content: space-around; */
   background-color: rgb(0, 0, 0, 0.2);
 }
 .trello-img {
@@ -23,6 +20,3 @@ body {
 p {
   margin: 0;
 }
-/* .homeImg {
-  color: white;
-} */
