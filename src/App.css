@@ -67,11 +67,17 @@
   background-color: rgb(175, 175, 212);
   margin: 1vw;
   margin-left: 3vw;
-  padding: 0 2vw 0 2vw;
+  padding: 1vw 2vw 1vw 2vw;
   align-items: center;
   justify-content: space-between;
   border-radius: 0.5vw;
 }
+
+
+.deleteButton{
+  margin-right: 0;
+}
+
 .deleteButtonForItem {
   margin-left: 1vw;
 }
@@ -109,20 +115,34 @@
   background-color: rgb(0, 0, 0, 0.2);
   color: aliceblue;
   border-radius: 0.5vw;
-  padding-bottom: 0.5vw;
+  padding-bottom: 2px;
 }
 
 .input::placeholder{
   color: black;
 }
 
+/* .hideInputDiv{
+  
+} */
+
 .inputHideDiv,
 .hideButtons {
   margin: 0.5vw;
 }
 
+.deleteButtonForCheckList{
+  margin-right: 5px;
+}
+
+.hideButton1{
+  margin-left: 10vw;
+  border: none;
+  border-radius: 0.5vw;
+  background-color: rgb(0, 0, 0, 0.2);
+}
+
 .hideButton,
-.hideButton1,
 .deleteButtonForItem {
   border: none;
   border-radius: 0.5vw;
@@ -132,7 +152,8 @@
 .input {
   border: none;
   background: none;
-  color: white;
+  color: black;
+  margin: 10px 0 0 0;
   border-bottom: 0.1vw solid black;
 }
 
@@ -140,7 +161,6 @@
   display: flex;
   justify-content: center;
 }
-
 
 .columncss {
   float: left;

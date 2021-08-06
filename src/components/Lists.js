@@ -96,7 +96,7 @@ class Lists extends Component {
     return (
       
       <div
-        style={{ display: 'flex', justifyContent: 'space-between' }}
+        style={{ display: 'flex'}}
         className='allLists'>
         {allLists}
         <button

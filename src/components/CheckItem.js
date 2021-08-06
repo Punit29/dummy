@@ -16,7 +16,7 @@ class CheckItem extends Component {
           readOnly
         />
         <div>
-          <p>{this.props.checkItem.name}</p>
+          <div>{this.props.checkItem.name}</div>
         </div>
         <button
           onClick={() => this.props.deleteCheckItem(this.props.checkItem.id)}

@@ -5,24 +5,26 @@ class Form extends React.Component {
   render() {
     return (
       <div className='hideDiv' style={{ display: this.props.style.display }}>
-        <div className='hideInputDiv'>
-          <input
-            onChange={this.props.inputState}
-            className='input'
-            required
-            type='text'
-            value={this.props.input}
-            placeholder='Enter title'
-          />
-        </div>
-        <div className='hideButtons'>
-          <button onClick={this.props.addNewCard} className='hideButton'>
-            {`Add ${this.props.buttonTitle}`}
-          </button>
-          <button onClick={this.props.closeInputDiv} className='hideButton1'>
+        <form onSubmit={e => e.preventDefault()}>
+          <div className='hideInputDiv'>
+            <input
+              required
+              onChange={this.props.inputState}
+              className='input'
+              type='text'
+              value={this.props.input}
+              placeholder='Enter title'
+            />
+          </div>
+          <div className='hideButtons'>
+            <button disabled={!this.props.input} onClick={this.props.addNewCard} className='hideButton'>
+              {`Add ${this.props.buttonTitle}`}
+            </button>
+            <button onClick={this.props.closeInputDiv} className='hideButton1'>
             X
           </button>
-        </div>
+          </div>
+          </form>
       </div>
     );
   }

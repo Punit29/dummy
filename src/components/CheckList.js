@@ -117,7 +117,7 @@ class CheckList extends Component {
               onClick={this.openHideDiv}
               style={{ display: closeaddButton }}
               className='addButtonForCheckItem btn btn-primary btn-xsm'>
-              add items
+              Add items
             </button>
             <Form
               style={{ display: openHideDiv }}
