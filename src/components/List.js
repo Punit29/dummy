@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import Card from './Card';
 import Form from './Form';
-const token =
-  '421401dc0406c370d37fcae4d35286fca589168586da4d3d914aa56f04324919';
-const key = '0411d596f676963925b6cdc26d6adbbf';
+
 
 class List extends Component {
   state = {
@@ -13,7 +11,7 @@ class List extends Component {
   };
   componentDidMount() {
     fetch(
-      `https://api.trello.com/1/lists/${this.props.lists.id}/cards?key=${key}&token=${token}`,
+      `https://api.trello.com/1/lists/${this.props.lists.id}/cards?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`,
       {
         // method: 'GET'
       }
@@ -45,7 +43,7 @@ class List extends Component {
     //console.log(this.props.lists.id);
 
     await fetch(
-      `https://api.trello.com/1/cards?idList=${this.props.lists.id}&name=${this.state.inputValue}&keepFromSource=all&key=${key}&token=${token}`,
+      `https://api.trello.com/1/cards?idList=${this.props.lists.id}&name=${this.state.inputValue}&keepFromSource=all&key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`,
       {
         method: 'POST'
       }
@@ -61,7 +59,7 @@ class List extends Component {
 
   deleteCard = (event, id) => {
     event.stopPropagation();
-    fetch(`https://api.trello.com/1/cards/${id}?key=${key}&token=${token}`, {
+    fetch(`https://api.trello.com/1/cards/${id}?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`, {
       method: 'DELETE'
     }).then(() => {
       this.setState({ cards: this.state.cards.filter(card => card.id !== id) });

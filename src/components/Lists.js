@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import List from './List';
 import Form from './Form';
 import Modal from './Modal';
-const token =
-  '421401dc0406c370d37fcae4d35286fca589168586da4d3d914aa56f04324919';
-const key = '0411d596f676963925b6cdc26d6adbbf';
+
 
 class Lists extends Component {
   state = {
@@ -18,7 +16,7 @@ class Lists extends Component {
     //console.log('helee');
     fetch(
       //get all lists
-      `https://api.trello.com/1/boards/${this.props.match.params.id}/lists?key=${key}&token=${token}`,
+      `https://api.trello.com/1/boards/${this.props.match.params.id}/lists?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`,
       {
         method: 'GET'
       }
@@ -48,7 +46,7 @@ class Lists extends Component {
   };
   addNewList = () => {
     fetch(
-      `https://api.trello.com/1/lists?name=${this.state.inputValue}&idBoard=${this.props.match.params.id}&pos=bottom&key=${key}&token=${token}`,
+      `https://api.trello.com/1/lists?name=${this.state.inputValue}&idBoard=${this.props.match.params.id}&pos=bottom&key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`,
       {
         method: 'POST'
       }
@@ -64,7 +62,7 @@ class Lists extends Component {
 
   deleteList = id => {
     fetch(
-      `https://api.trello.com/1/lists/${id}/closed?value=true&key=${key}&token=${token}`,
+      `https://api.trello.com/1/lists/${id}/closed?value=true&key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`,
       {
         method: 'PUT'
       }

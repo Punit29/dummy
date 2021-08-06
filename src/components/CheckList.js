@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import Form from './Form';
 import CheckItem from './CheckItem'; //component of checkItem
 
-const token =
-  '421401dc0406c370d37fcae4d35286fca589168586da4d3d914aa56f04324919';
-const key = '0411d596f676963925b6cdc26d6adbbf';
+
 
 class CheckList extends Component {
   state = {
@@ -12,7 +10,7 @@ class CheckList extends Component {
   };
   componentDidMount() {
     fetch(
-      `https://api.trello.com/1/checklists/${this.props.checkList.id}/checkItems?key=${key}&token=${token}`,
+      `https://api.trello.com/1/checklists/${this.props.checkList.id}/checkItems?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`,
       {
         method: 'GET'
       }
@@ -41,7 +39,7 @@ class CheckList extends Component {
   };
   addNewCheckItem = () => {
     fetch(
-      `https://api.trello.com/1/checklists/${this.props.checkList.id}/checkItems?name=${this.state.inputValue}&pos=bottom&checked=false&key=${key}&token=${token}`,
+      `https://api.trello.com/1/checklists/${this.props.checkList.id}/checkItems?name=${this.state.inputValue}&pos=bottom&checked=false&key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`,
       {
         method: 'POST'
       }
@@ -56,7 +54,7 @@ class CheckList extends Component {
   };
   deleteCheckItem = id => {
     fetch(
-      `https://api.trello.com/1/checklists/${this.props.checkList.id}/checkItems/${id}?key=${key}&token=${token}`,
+      `https://api.trello.com/1/checklists/${this.props.checkList.id}/checkItems/${id}?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`,
       {
         method: 'DELETE'
       }
@@ -71,7 +69,7 @@ class CheckList extends Component {
   updateCheckItem = (event, checkItem) => {
     let checkItemStatus = event.target.checked ? 'complete' : 'incomplete';
     fetch(
-      `https://api.trello.com/1/cards/${this.props.checkList.idCard}/checkItem/${checkItem.id}?state=${checkItemStatus}&key=${key}&token=${token}`,
+      `https://api.trello.com/1/cards/${this.props.checkList.idCard}/checkItem/${checkItem.id}?state=${checkItemStatus}&key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`,
       {
         method: 'PUT'
       }

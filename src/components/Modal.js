@@ -2,9 +2,7 @@ import React from 'react';
 import Modal from 'react-responsive-modal'; //install lib for modal pop up
 import CheckList from './CheckList';
 import Form from './Form';
-const token =
-  '421401dc0406c370d37fcae4d35286fca589168586da4d3d914aa56f04324919';
-const key = '0411d596f676963925b6cdc26d6adbbf';
+
 
 const styles = {
   fontFamily: 'sans-serif',
@@ -20,7 +18,7 @@ class Appp extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.card.id !== prevProps.card.id) {
       fetch(
-        `https://api.trello.com/1/cards/${this.props.card.id}/checklists?checkItems=all&checkItem_fields=name%2CnameData%2Cpos%2Cstate&filter=all&fields=all&key=${key}&token=${token}`,
+        `https://api.trello.com/1/cards/${this.props.card.id}/checklists?checkItems=all&checkItem_fields=name%2CnameData%2Cpos%2Cstate&filter=all&fields=all&key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`,
         {
           method: 'GET'
         }
@@ -50,7 +48,7 @@ class Appp extends React.Component {
   };
   addNewCheckList = () => {
     fetch(
-      `https://api.trello.com/1/cards/${this.props.card.id}/checklists?name=${this.state.inputValue}&key=${key}&token=${token}`,
+      `https://api.trello.com/1/cards/${this.props.card.id}/checklists?name=${this.state.inputValue}&key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`,
       {
         method: 'POST'
       }
@@ -65,7 +63,7 @@ class Appp extends React.Component {
   };
   deleteCheckList = id => {
     fetch(
-      `https://api.trello.com/1/checklists/${id}?key=${key}&token=${token}`,
+      `https://api.trello.com/1/checklists/${id}?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`,
       {
         method: 'DELETE'
       }
